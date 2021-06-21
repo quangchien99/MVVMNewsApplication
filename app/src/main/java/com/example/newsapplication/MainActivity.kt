@@ -7,8 +7,10 @@ import com.example.newsapplication.databinding.ActivityMainBinding
 import com.example.newsapplication.features.bookmarks.BookmarksFragment
 import com.example.newsapplication.features.breakingnews.BreakingNewsFragment
 import com.example.newsapplication.features.searchnews.SearchNewsFragments
+import dagger.hilt.android.AndroidEntryPoint
 import java.lang.IllegalArgumentException
 
+@AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
