@@ -8,4 +8,17 @@ class NewsRepository @Inject constructor(
     private val newsArticleDatabase: NewsArticleDatabase
 ) {
     private val newsArticleDao = newsArticleDatabase.getNewsArticleDao()
+
+    suspend fun getBreakingNews(): List<NewsArticle> {
+        val response = newsApi.getBreakingNews()
+        val serverBreakingNewsArticles = response.articles
+        return serverBreakingNewsArticles.map { serverBreakingNewsArticle ->
+            NewsArticle(
+                title = serverBreakingNewsArticle.title,
+                url = serverBreakingNewsArticle.url,
+                thumbnailUrl = serverBreakingNewsArticle.urlToImage,
+                isBookmarked = false
+            )
+        }
+    }
 }

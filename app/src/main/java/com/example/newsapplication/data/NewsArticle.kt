@@ -9,7 +9,7 @@ data class NewsArticle(
     val id: Int = 0,
     val url: String,
     val title: String?,
-    val thumbnailUrl: String,
+    val thumbnailUrl: String?,
     val isBookmarked: Boolean,
     val updateAt: Long = System.currentTimeMillis()
 )
